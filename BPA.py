@@ -32,21 +32,6 @@ r = requests.post('https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search',
 with open("btc.txt", "w", encoding='utf-8') as f:
     f.write(r.text)
 
-headers = {
-    "Accept": "*/*",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
-    "Cache-Control": "no-cache",
-    "Connection": "keep-alive",
-    "Content-Length": "123",
-    "content-type": "application/json",
-    "Host": "p2p.binance.com",
-    "Origin": "https://p2p.binance.com",
-    "Pragma": "no-cache",
-    "TE": "Trailers",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
-}
-
 data = {
   "asset": "ETH",
   "fiat": "ARS",
@@ -63,21 +48,6 @@ r = requests.post('https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search',
 with open("eth.txt", "w", encoding='utf-8') as f:
     f.write(r.text)
 
-
-headers = {
-    "Accept": "*/*",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
-    "Cache-Control": "no-cache",
-    "Connection": "keep-alive",
-    "Content-Length": "123",
-    "content-type": "application/json",
-    "Host": "p2p.binance.com",
-    "Origin": "https://p2p.binance.com",
-    "Pragma": "no-cache",
-    "TE": "Trailers",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
-}
 
 data = {
   "asset": "USDT",
@@ -122,6 +92,7 @@ pricebtc = apibtc_json['price']
 resulteth = ((((100 / int(float(p2pusdtok))) / int(float(priceeth))) * int(float(p2pethok))) / 100 - 1) * 100
 resultbtc = ((((100 / int(float(p2pusdtok))) / int(float(pricebtc))) * int(float(p2pbtcok))) / 100 - 1) * 100
 
+#Remove temp txt files
 fn = "eth.txt"
 fb = "btc.txt"
 fa = "usdt.txt"
