@@ -1,5 +1,6 @@
-import requests
 import json
+import requests
+
 
 headers = {
     "Accept": "*/*",
@@ -19,7 +20,7 @@ headers = {
 data = {
   "asset": "BTC",
   "fiat": "ARS",
-  "merchantCheck": False,
+  "merchantCheck": True,
   "page": 1,
   "payTypes": [],
   "publisherType": None,
@@ -35,7 +36,7 @@ with open("btc.txt", "w", encoding='utf-8') as f:
 data = {
   "asset": "ETH",
   "fiat": "ARS",
-  "merchantCheck": False,
+  "merchantCheck": True,
   "page": 1,
   "payTypes": [],
   "publisherType": None,
@@ -52,11 +53,11 @@ with open("eth.txt", "w", encoding='utf-8') as f:
 data = {
   "asset": "USDT",
   "fiat": "ARS",
-  "merchantCheck": False,
+  "merchantCheck": True,
   "page": 1,
   "payTypes": [],
   "publisherType": None,
-  "rows": 3,
+  "rows": 10,
   "tradeType": "BUY"
 }
 
@@ -69,7 +70,7 @@ with open("usdt.txt", "w", encoding='utf-8') as f:
 p2pusdt = "usdt.txt"
 with open(p2pusdt) as file:
     p2pusdt_json = json.load(file)
-p2pusdtok = p2pusdt_json['data'][2]['adv']['price']
+p2pusdtok = p2pusdt_json['data'][3]['adv']['price']
 
 p2peth = "eth.txt"
 with open(p2peth) as file:
